@@ -59,17 +59,7 @@ Every push to `main` publishes the site to GitHub Pages via [`deploy-pages.yml`]
 
 The Inter variable font is self-hosted from [`fonts/`](fonts/); see [`fonts/README.md`](fonts/README.md) for details.
 
-## License
-
-[MIT](LICENSE)
-
----
-
-<div align="center">
-
 ### Support
 
 If this calendar saved you a click, a lookup, or an afternoon of counting weeks on your hands,
 consider [buying me a coffee](https://buymeacoffee.com/kibotu).
-
-</div>
