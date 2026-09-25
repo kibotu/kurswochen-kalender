@@ -1,5 +1,6 @@
-/* Kurswoche Kalender 2026
+/* Kurswoche Kalender
  * "Kurswoche" is implemented as ISO-8601 week number (KW).
+ * Any year works; today's date decides the default view.
  */
 
 const WEEKDAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -140,7 +141,7 @@ function el(tag, className, text) {
   return node;
 }
 
-function renderTodayCard(today, weeks2026) {
+function renderTodayCard(today, weeks) {
   const kwValue = document.getElementById("todayKwValue");
   const kwMeta = document.getElementById("todayKwMeta");
 
@@ -150,7 +151,7 @@ function renderTodayCard(today, weeks2026) {
   kwValue.textContent = `KW ${week} (${weekYear})`;
   const selectedYear = state.year;
   const inView = today.getFullYear() === selectedYear;
-  const inSelectedYearWeeks = weeks2026.some((w) => w.week === week && w.weekYear === selectedYear);
+  const inSelectedYearWeeks = weeks.some((w) => w.week === week && w.weekYear === selectedYear);
 
   const parts = [
     `${fmtDate(today)}`,
@@ -319,13 +320,13 @@ function wireActions(today) {
   jumpToTodayInYearBtn.addEventListener("click", () => {
     const ok = scrollToTodayInView(today);
     if (!ok) {
-      // Fallback: show KW in list if it exists in 2026, else just scroll to top.
+      // Fallback: show KW in list if it's in the selected year, else scroll to top.
       document.getElementById("todayCard").scrollIntoView({ block: "start", behavior: "smooth" });
     }
   });
 
   function clampYear(y) {
-    if (!Number.isFinite(y)) return 2026;
+    if (!Number.isFinite(y)) return new Date().getFullYear();
     return Math.max(1900, Math.min(2100, y));
   }
 
@@ -380,6 +381,8 @@ function readSelectedYear() {
 function updateTitle(year) {
   const title = document.getElementById("calendarTitle");
   if (title) title.textContent = String(year);
+  const kwListTitle = document.getElementById("kwListTitle");
+  if (kwListTitle) kwListTitle.textContent = `Kurswochen (${year})`;
   document.title = `Kurswoche Kalender ${year}`;
 }
 

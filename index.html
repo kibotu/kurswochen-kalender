@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kurswoche Kalender 2026</title>
+    <title>Kurswoche Kalender</title>
     <meta
       name="description"
-      content="Beautiful full-year 2026 calendar with Kurswoche (ISO week) labels and today's KW card."
+      content="Full-year calendar with Kurswoche (ISO week) labels and a card for today's KW."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -16,7 +16,7 @@
         <div class="topbar__inner">
           <div class="brand">
             <div class="brand__title">Kurswoche Kalender</div>
-            <div class="brand__subtitle">Full year view for 2026 (ISO week numbers)</div>
+            <div class="brand__subtitle">Full year view (ISO week numbers)</div>
           </div>
           <div class="actions">
             <div class="yearpicker" aria-label="Select year">
@@ -32,7 +32,6 @@
                 min="1900"
                 max="2100"
                 step="1"
-                value="2026"
               />
               <button id="nextYearBtn" class="btn btn--ghost" type="button" aria-label="Next year">
                 ›
@@ -58,7 +57,7 @@
         <section class="content">
           <aside class="sidebar">
             <div class="sidebar__header">
-              <div class="sidebar__title">Kurswochen (2026)</div>
+              <div class="sidebar__title" id="kwListTitle">Kurswochen</div>
               <div class="sidebar__subtitle">Click to highlight the week</div>
             </div>
             <div class="kwlist" id="kwList" role="list"></div>
@@ -66,7 +65,7 @@
 
           <section class="calendar">
             <div class="calendar__header">
-              <h1 class="calendar__title" id="calendarTitle">2026</h1>
+              <h1 class="calendar__title" id="calendarTitle"></h1>
               <div class="calendar__legend">
                 <span class="pill">KW = Kurswoche (ISO)</span>
                 <span class="pill pill--accent">Today</span>
