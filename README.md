@@ -1,6 +1,6 @@
 <div align="center">
 
-# Kurswoche Kalender
+# Kurswochen Kalender
 
 **A full-year calendar that answers one question quickly: which week is it?**
 
