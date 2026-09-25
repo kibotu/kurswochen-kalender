@@ -9,6 +9,8 @@
 
 [**Open the calendar →**](https://kibotu.github.io/kurswochen-kalender/)
 
+<img src="./screenshot.png" alt="Kurswoche Kalender showing KW 39 (2026) with today's week highlighted in the sidebar and the current week marked across the year view" width="100%" />
+
 </div>
 
 ---
